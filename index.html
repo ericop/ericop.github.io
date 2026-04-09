@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EricOP Projects</title>
-  <meta name="description" content="A searchable, mobile-friendly project hub for EricOP with orange-pants energy and a nerdy lab notebook vibe.">
+  <meta name="description" content="Games, tools, and experiments with orange-pants nerd energy.">
   <style>
     :root {
       --bg: #121212;
@@ -16,18 +16,12 @@
       --accent: #ff8f00;
       --accent-2: #ffb74d;
       --accent-3: #ffcc80;
-      --success: #8bc34a;
       --shadow: rgba(0, 0, 0, 0.28);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --max: 1200px;
+      --radius: 14px;
+      --max: 1120px;
     }
 
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
 
     body {
       margin: 0;
@@ -37,7 +31,7 @@
         radial-gradient(circle at bottom left, rgba(255, 183, 77, 0.08), transparent 25%),
         linear-gradient(180deg, #141414 0%, #101010 100%);
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.45;
     }
 
     a {
@@ -54,7 +48,7 @@
     .shell {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 24px;
+      padding: 18px;
     }
 
     .hero {
@@ -62,18 +56,18 @@
       overflow: hidden;
       background: linear-gradient(145deg, rgba(255, 143, 0, 0.16), rgba(255, 143, 0, 0.05));
       border: 1px solid rgba(255, 183, 77, 0.22);
-      box-shadow: 0 16px 40px var(--shadow);
-      border-radius: 28px;
-      padding: 28px;
-      margin-bottom: 24px;
+      box-shadow: 0 10px 24px var(--shadow);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
     }
 
     .hero::after {
       content: "<>";
       position: absolute;
-      right: 20px;
-      top: 10px;
-      font-size: 6rem;
+      right: 14px;
+      top: 2px;
+      font-size: 3.2rem;
       font-weight: 800;
       color: rgba(255, 204, 128, 0.08);
       pointer-events: none;
@@ -82,208 +76,130 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       background: rgba(255, 143, 0, 0.18);
       border: 1px solid rgba(255, 183, 77, 0.3);
       color: var(--accent-3);
-      padding: 6px 12px;
+      padding: 3px 8px;
       border-radius: 999px;
-      font-size: 0.9rem;
-      margin-bottom: 14px;
+      font-size: 0.74rem;
+      margin-bottom: 6px;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin: 0 0 4px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
       line-height: 1.05;
     }
 
     .hero p {
-      max-width: 70ch;
       margin: 0;
       color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .button,
-    button {
-      appearance: none;
-      border: 1px solid rgba(255, 183, 77, 0.24);
-      background: linear-gradient(180deg, #ff9800, #f57c00);
-      color: #201205;
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 12px 16px;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(245, 124, 0, 0.25);
-    }
-
-    .button.secondary,
-    button.secondary {
-      background: transparent;
-      color: var(--accent-3);
-      box-shadow: none;
-    }
-
-    .toolbar {
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr auto;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .field,
-    .select,
-    .stat,
-    .project-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 24px var(--shadow);
-    }
-
-    .field,
-    .select {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0 14px;
-      min-height: 56px;
-    }
-
-    .field input,
-    .select select {
-      width: 100%;
-      background: transparent;
-      color: var(--text);
-      border: 0;
-      outline: none;
-      font: inherit;
-    }
-
-    .select select {
-      appearance: none;
-      cursor: pointer;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .stat {
-      padding: 16px;
-    }
-
-    .stat-label {
-      display: block;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-    }
-
-    .stat-value {
-      font-size: 1.5rem;
-      font-weight: 800;
+      font-size: 0.82rem;
+      max-width: 60ch;
     }
 
     .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin: 24px 0 14px;
+      margin: 0 0 10px;
     }
 
     .section-title h2 {
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1rem;
     }
 
     .section-title p {
-      margin: 0;
+      margin: 2px 0 0;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.8rem;
     }
 
     .projects {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 12px;
     }
 
     .project-card {
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      min-height: 100%;
-      transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255, 183, 77, 0.36);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.32);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 18px var(--shadow);
+      padding: 10px;
     }
 
     .project-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 12px;
+      gap: 8px;
+      margin-bottom: 6px;
     }
 
     .project-title {
       margin: 0;
-      font-size: 1.15rem;
+      font-size: 0.95rem;
       line-height: 1.2;
     }
 
-    .badge {
+    .category-badge,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .category-badge {
       flex-shrink: 0;
       background: rgba(255, 143, 0, 0.15);
       color: var(--accent-3);
       border: 1px solid rgba(255, 183, 77, 0.25);
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      white-space: nowrap;
+      padding: 3px 7px;
+      font-size: 0.66rem;
     }
 
     .summary {
       color: var(--muted);
-      margin: 0;
+      margin: 0 0 8px;
+      font-size: 0.8rem;
+      line-height: 1.38;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      color: #eadfce;
+      padding: 2px 7px;
+      font-size: 0.68rem;
     }
 
     .project-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: auto;
+      gap: 6px;
     }
 
     .project-links a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 40px;
-      padding: 10px 12px;
-      border-radius: 10px;
+      min-height: 28px;
+      padding: 5px 9px;
+      border-radius: 9px;
       background: var(--panel-2);
       border: 1px solid var(--line);
       color: var(--text);
       font-weight: 700;
+      font-size: 0.76rem;
     }
 
     .project-links a.primary {
@@ -292,55 +208,24 @@
       color: var(--accent-3);
     }
 
-    .empty {
-      display: none;
-      padding: 22px;
-      text-align: center;
-      color: var(--muted);
-      background: var(--panel);
-      border: 1px dashed var(--line);
-      border-radius: var(--radius);
-    }
-
     .footer {
-      margin: 28px 0 12px;
+      margin: 14px 0 4px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.76rem;
       text-align: center;
     }
 
-    .kbd {
-      display: inline-block;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      border-radius: 8px;
-      padding: 2px 8px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.9em;
-      color: #fff;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    @media (max-width: 900px) {
-      .toolbar,
-      .projects,
-      .stats {
+    @media (max-width: 780px) {
+      .projects {
         grid-template-columns: 1fr;
       }
 
+      .shell {
+        padding: 12px;
+      }
+
       .hero {
-        padding: 22px;
+        padding: 12px;
       }
     }
   </style>
@@ -348,258 +233,230 @@
 <body>
   <main class="shell">
     <section class="hero">
-      <div class="eyebrow">🧡 Orange Pants Studios • Nerdy project hub</div>
+      <div class="eyebrow">🧡 Orange Pants Studios</div>
       <h1>EricOP GitHub Projects</h1>
-      <p>
-        A searchable home base for experiments, games, utilities, and tiny weird ideas that somehow escaped the lab.
-        Built to be easy to browse on desktop, phone, and that one tablet that always has 12% battery.
-      </p>
-      <div class="hero-actions">
-        <a class="button" href="#projects">Browse projects</a>
-        <a class="button secondary" href="https://github.com/ericop" target="_blank" rel="noreferrer">Open GitHub profile</a>
-      </div>
-    </section>
-
-    <section aria-label="Project filters">
-      <div class="toolbar">
-        <label class="field" for="searchInput">
-          <span aria-hidden="true">🔎</span>
-          <span class="sr-only">Search projects</span>
-          <input id="searchInput" type="search" placeholder="Search by title, summary, tag, or vibes..." autocomplete="off">
-        </label>
-
-        <label class="select" for="categoryFilter">
-          <span aria-hidden="true">🧪</span>
-          <span class="sr-only">Filter by category</span>
-          <select id="categoryFilter">
-            <option value="all">All categories</option>
-            <option value="game">Games</option>
-            <option value="tool">Tools & libraries</option>
-            <option value="app">Apps & services</option>
-            <option value="experiment">Experiments & presentations</option>
-          </select>
-        </label>
-
-        <button id="clearButton" class="secondary" type="button">Reset</button>
-      </div>
-
-      <div class="stats" aria-label="Project stats">
-        <article class="stat">
-          <span class="stat-label">Projects shown</span>
-          <span id="visibleCount" class="stat-value">0</span>
-        </article>
-        <article class="stat">
-          <span class="stat-label">Total projects</span>
-          <span id="totalCount" class="stat-value">0</span>
-        </article>
-        <article class="stat">
-          <span class="stat-label">Quick tip</span>
-          <span class="stat-value"><span class="kbd">/</span> to search</span>
-        </article>
-      </div>
+      <p>Games, tools, and experiments with orange-pants nerd energy.</p>
     </section>
 
     <section id="projects" aria-labelledby="projectsHeading">
       <div class="section-title">
-        <div>
-          <h2 id="projectsHeading">Projects</h2>
-          <p>Each card links to the repo and, when available, a playable or viewable version.</p>
-        </div>
+        <h2 id="projectsHeading">Projects</h2>
+        <p>Repo and playable links, with quick tags.</p>
       </div>
 
-      <div id="projectGrid" class="projects"></div>
-      <div id="emptyState" class="empty">No projects matched that search. The bugs are innocent this time.</div>
-    </section>
-
-    <p class="footer">
-      Made with orange energy, nerd optimism, and just enough structure so future-you does not have to play detective.
-    </p>
-  </main>
-
-  <script>
-    const projects = [
-      {
-        title: 'The Last Good Plan',
-        category: 'game',
-        tags: ['space', 'strategy', 'roguelike', 'typescript', 'vite'],
-        repo: 'https://github.com/ericop/the-last-good-plan',
-        demo: 'https://ericop.github.io/the-last-good-plan',
-        summary: 'A calm sci-fi strategy game about designing a self-sustaining spaceship and then living with your decisions. It leans into planning, resource tradeoffs, and the fun tension of “this is either genius or a slow-motion disaster.”'
-      },
-      {
-        title: 'Kindness TD',
-        category: 'game',
-        tags: ['tower defense', 'kindness', 'javascript', 'game'],
-        repo: 'https://github.com/ericop/Kindness-TD',
-        demo: 'https://ericop.github.io/Kindness-TD',
-        summary: 'A tower defense game where kindness is the weapon and grumpy folks are the challenge. Instead of pure destruction, the theme turns cheering people up into the core mechanic, which is delightfully wholesome and just a little sneaky.'
-      },
-      {
-        title: "S'More Space",
-        category: 'game',
-        tags: ['board game', 'campground', 'tiles', 'multiplayer'],
-        repo: 'https://github.com/ericop/Smore-Space',
-        demo: 'https://ericop.github.io/Smore-Space',
-        summary: 'An electronic board-game-style project about building an ideal campground through multiplayer tile placement. It looks like the kind of design space where cozy planning and friendly sabotage can hold hands.'
-      },
-      {
-        title: 'Super Cursor Bros',
-        category: 'game',
-        tags: ['platformer', 'clicker', 'windows', 'retro'],
-        repo: 'https://github.com/ericop/super-cursor-bros',
-        demo: 'https://ericop.github.io/super-cursor-bros',
-        summary: 'A half-clicker, half-platformer game with old-school Windows flavor. The mashup idea is fun because both halves feed the same goofy retro-computer energy instead of feeling like two unrelated mini-games taped together.'
-      },
-      {
-        title: 'Eliza Defends Her Humans',
-        category: 'game',
-        tags: ['dog', '2d', 'family', 'cats'],
-        repo: 'https://github.com/ericop/defend-my-human',
-        demo: 'https://ericop.github.io/defend-my-human',
-        summary: 'A cute 2-D game where a dog protects their human from incoming cats. The pitch is immediately readable, kid-friendly, and honestly has the energy of a Saturday morning cartoon that discovered collision detection.'
-      },
-      {
-        title: 'Growing Seeds',
-        category: 'game',
-        tags: ['board game', 'hex', 'plants', 'strategy'],
-        repo: 'https://github.com/ericop/growing-seeds',
-        demo: 'https://ericop.github.io/growing-seeds',
-        summary: 'A board game centered on hex area control and outgrowing your friends with better produce. The theme gives the strategy a playful hook, which makes the competitive layer feel more inviting than dry abstract warfare.'
-      },
-      {
-        title: 'Star Reef',
-        category: 'game',
-        tags: ['spatial strategy', 'sci-fi', 'coral', 'energy'],
-        repo: 'https://github.com/ericop/star-reef',
-        demo: 'https://ericop.github.io/star-reef',
-        summary: 'A spatial strategy concept where coral-like colonies expand in a hostile stellar environment shaped by energy currents. It sounds like a strong blend of organic growth patterns and positional planning, which is catnip for systems nerds.'
-      },
-      {
-        title: 'Bible Scout App',
-        category: 'app',
-        tags: ['pwa', 'bible', 'reading plan', 'web app'],
-        repo: 'https://github.com/ericop/bible-scout-app',
-        demo: 'https://bible-scout-app.netlify.app',
-        summary: 'A Bible reading plan PWA built around helping people move through Scripture one reading at a time. The focus appears practical and lightweight, which is usually exactly what a habit-forming app needs.'
-      },
-      {
-        title: 'Bible Scout Backend',
-        category: 'app',
-        tags: ['aws lambda', 'golang', 'api', 'backend'],
-        repo: 'https://github.com/ericop/aws-bible-api-proxy',
-        demo: 'https://us-east-2.console.aws.amazon.com/apigateway/home?region=us-east-2#/apis/dcu73qiiyi/stages/default/resources/~1bible-scout-proxy/methods/POST',
-        summary: 'An AWS Lambda proxy written in Go that adds an API key for Bible Scout. It looks like a focused backend support piece meant to keep the client app simpler while hiding a bit of infrastructure plumbing.'
-      },
-      {
-        title: 'Frogs And Fireflies',
-        category: 'game',
-        tags: ['mobile', 'android', 'family', 'unity'],
-        repo: 'https://github.com/ericop/FrogsAndFireflies',
-        demo: 'https://play.google.com/store/apps/details?id=com.OrangePantsStudios.FrogsAndFirefliesByEopAndEllie',
-        summary: 'A mobile game made with Ellie that leans into frogs, fireflies, and arcade-y charm. The tone sounds cheerful and accessible, which usually means it is the kind of thing you can hand to a kid without a five-minute disclaimer.'
-      },
-      {
-        title: 'Blip Wars',
-        category: 'game',
-        tags: ['unity', 'rts', '2d', 'strategy'],
-        repo: 'https://github.com/ericop/BlipWars',
-        demo: 'https://github.com/ericop/BlipWars',
-        summary: 'A simple-but-interesting Unity 2D RTS. The repo pitch suggests it aims for approachable strategy design rather than turning every match into a spreadsheet wearing a helmet.'
-      },
-      {
-        title: 'JS MVC Presentation',
-        category: 'experiment',
-        tags: ['javascript', 'mvc', 'presentation', 'frontend'],
-        repo: 'https://github.com/ericop/js-mvc-presentation',
-        demo: 'https://ericop.github.io/js-mvc-presentation',
-        summary: 'A presentation comparing JavaScript MVC frameworks. It feels like a useful snapshot of a particular era of frontend thinking, back when framework debates could summon three-hour conversations and one dramatic whiteboard diagram.'
-      },
-      {
-        title: 'Identify Tree by Leaf',
-        category: 'tool',
-        tags: ['nature', 'reference', 'trees', 'education'],
-        repo: 'https://github.com/ericop/identify-tree-by-leaf',
-        demo: 'https://ericop.github.io/identify-tree-by-leaf/',
-        summary: 'A guide for identifying trees in Eastern North America based on leaf appearance. It is a nice example of software being useful in a very grounded, real-world way instead of only inside dev tools and game loops.'
-      },
-      {
-        title: 'Clockpicker',
-        category: 'tool',
-        tags: ['jquery', 'bootstrap', 'timepicker', 'ui'],
-        repo: 'https://github.com/ericop/clockpicker',
-        demo: 'https://ericop.github.io/clockpicker',
-        summary: 'A clock-style time picker for Bootstrap or jQuery with 12-hour AM/PM support. This is the kind of UI utility that quietly saves people from building the same annoying input widget over and over again.'
-      }
-    ];
-
-    const projectGrid = document.getElementById('projectGrid');
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const clearButton = document.getElementById('clearButton');
-    const visibleCount = document.getElementById('visibleCount');
-    const totalCount = document.getElementById('totalCount');
-    const emptyState = document.getElementById('emptyState');
-
-    totalCount.textContent = String(projects.length);
-
-    const normalize = (value) => value.toLowerCase().trim();
-
-    const matchesProject = (project, query, category) => {
-      const haystack = [project.title, project.summary, project.category, ...(project.tags || [])]
-        .join(' ')
-        .toLowerCase();
-
-      const queryMatch = !query || haystack.includes(query);
-      const categoryMatch = category === 'all' || project.category === category;
-      return queryMatch && categoryMatch;
-    };
-
-    const projectCard = (project) => {
-      const hasDistinctDemo = project.demo && project.demo !== project.repo;
-      return `
-        <article class="project-card" data-category="${project.category}">
+      <div class="projects">
+        <article class="project-card">
           <div class="project-top">
-            <div>
-              <h3 class="project-title">${project.title}</h3>
-            </div>
-            <span class="badge">${project.category}</span>
+            <h3 class="project-title">The Last Good Plan</h3>
+            <span class="category-badge">game</span>
           </div>
-          <p class="summary">${project.summary}</p>
+          <p class="summary">A calm sci-fi strategy game about designing a self-sustaining spaceship and then living with your decisions. It leans into planning, resource tradeoffs, and the fun tension of this either being genius or a slow-motion disaster.</p>
+          <div class="tags">
+            <span class="tag">space</span><span class="tag">strategy</span><span class="tag">roguelike</span><span class="tag">typescript</span><span class="tag">vite</span>
+          </div>
           <div class="project-links">
-            <a class="primary" href="${project.repo}" target="_blank" rel="noreferrer">GitHub repo</a>
-            ${hasDistinctDemo ? `<a href="${project.demo}" target="_blank" rel="noreferrer">Live / viewable</a>` : ''}
+            <a class="primary" href="https://github.com/ericop/the-last-good-plan" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/the-last-good-plan" target="_blank" rel="noreferrer">Live / viewable</a>
           </div>
         </article>
-      `;
-    };
 
-    const render = () => {
-      const query = normalize(searchInput.value);
-      const category = categoryFilter.value;
-      const filtered = projects.filter((project) => matchesProject(project, query, category));
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Kindness TD</h3>
+            <span class="category-badge">game</span>
+          </div>
+          <p class="summary">A tower defense game where kindness is the weapon and grumpy folks are the challenge. Instead of pure destruction, the theme turns cheering people up into the core mechanic, which is delightfully wholesome and just a little sneaky.</p>
+          <div class="tags">
+            <span class="tag">tower defense</span><span class="tag">kindness</span><span class="tag">javascript</span><span class="tag">game</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/Kindness-TD" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/Kindness-TD" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
 
-      projectGrid.innerHTML = filtered.map(projectCard).join('');
-      visibleCount.textContent = String(filtered.length);
-      emptyState.style.display = filtered.length ? 'none' : 'block';
-    };
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">S'More Space</h3>
+            <span class="category-badge">game</span>
+          </div>
+          <p class="summary">An electronic board-game-style project about building an ideal campground through multiplayer tile placement. It looks like the kind of design space where cozy planning and friendly sabotage can hold hands.</p>
+          <div class="tags">
+            <span class="tag">board game</span><span class="tag">campground</span><span class="tag">tiles</span><span class="tag">multiplayer</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/Smore-Space" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/Smore-Space" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
 
-    searchInput.addEventListener('input', render);
-    categoryFilter.addEventListener('change', render);
-    clearButton.addEventListener('click', () => {
-      searchInput.value = '';
-      categoryFilter.value = 'all';
-      render();
-      searchInput.focus();
-    });
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Super Cursor Bros</h3>
+            <span class="category-badge">game</span>
+          </div>
+          <p class="summary">A half-clicker, half-platformer game with old-school Windows flavor. The mashup idea is fun because both halves feed the same goofy retro-computer energy instead of feeling like two unrelated mini-games taped together.</p>
+          <div class="tags">
+            <span class="tag">platformer</span><span class="tag">clicker</span><span class="tag">windows</span><span class="tag">retro</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/super-cursor-bros" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/super-cursor-bros" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === '/' && document.activeElement !== searchInput) {
-        event.preventDefault();
-        searchInput.focus();
-      }
-    });
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Eliza Defends Her Humans</h3>
+            <span class="category-badge">game</span>
+          </div>
+          <p class="summary">A cute 2-D game where a dog protects their human from incoming cats. The pitch is immediately readable, kid-friendly, and honestly has the energy of a Saturday morning cartoon that discovered collision detection.</p>
+          <div class="tags">
+            <span class="tag">dog</span><span class="tag">2d</span><span class="tag">family</span><span class="tag">cats</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/defend-my-human" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/defend-my-human" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
 
-    render();
-  </script>
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Growing Seeds</h3>
+            <span class="category-badge">game</span>
+          </div>
+          <p class="summary">A board game centered on hex area control and outgrowing your friends with better produce. The theme gives the strategy a playful hook, which makes the competitive layer feel more inviting than dry abstract warfare.</p>
+          <div class="tags">
+            <span class="tag">board game</span><span class="tag">hex</span><span class="tag">plants</span><span class="tag">strategy</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/growing-seeds" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/growing-seeds" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Star Reef</h3>
+            <span class="category-badge">game</span>
+          </div>
+          <p class="summary">A spatial strategy concept where coral-like colonies expand in a hostile stellar environment shaped by energy currents. It sounds like a strong blend of organic growth patterns and positional planning, which is catnip for systems nerds.</p>
+          <div class="tags">
+            <span class="tag">spatial strategy</span><span class="tag">sci-fi</span><span class="tag">coral</span><span class="tag">energy</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/star-reef" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/star-reef" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Bible Scout App</h3>
+            <span class="category-badge">app</span>
+          </div>
+          <p class="summary">A Bible reading plan PWA built around helping people move through Scripture one reading at a time. The focus appears practical and lightweight, which is usually exactly what a habit-forming app needs.</p>
+          <div class="tags">
+            <span class="tag">pwa</span><span class="tag">bible</span><span class="tag">reading plan</span><span class="tag">web app</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/bible-scout-app" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://bible-scout-app.netlify.app" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Bible Scout Backend</h3>
+            <span class="category-badge">app</span>
+          </div>
+          <p class="summary">An AWS Lambda proxy written in Go that adds an API key for Bible Scout. It looks like a focused backend support piece meant to keep the client app simpler while hiding a bit of infrastructure plumbing.</p>
+          <div class="tags">
+            <span class="tag">aws lambda</span><span class="tag">golang</span><span class="tag">api</span><span class="tag">backend</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/aws-bible-api-proxy" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://us-east-2.console.aws.amazon.com/apigateway/home?region=us-east-2#/apis/dcu73qiiyi/stages/default/resources/~1bible-scout-proxy/methods/POST" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Frogs And Fireflies</h3>
+            <span class="category-badge">game</span>
+          </div>
+          <p class="summary">A mobile game made with Ellie that leans into frogs, fireflies, and arcade-y charm. The tone sounds cheerful and accessible, which usually means it is the kind of thing you can hand to a kid without a five-minute disclaimer.</p>
+          <div class="tags">
+            <span class="tag">mobile</span><span class="tag">android</span><span class="tag">family</span><span class="tag">unity</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/FrogsAndFireflies" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://play.google.com/store/apps/details?id=com.OrangePantsStudios.FrogsAndFirefliesByEopAndEllie" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Blip Wars</h3>
+            <span class="category-badge">game</span>
+          </div>
+          <p class="summary">A simple-but-interesting Unity 2D RTS. The repo pitch suggests it aims for approachable strategy design rather than turning every match into a spreadsheet wearing a helmet.</p>
+          <div class="tags">
+            <span class="tag">unity</span><span class="tag">rts</span><span class="tag">2d</span><span class="tag">strategy</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/BlipWars" target="_blank" rel="noreferrer">GitHub repo</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">JS MVC Presentation</h3>
+            <span class="category-badge">experiment</span>
+          </div>
+          <p class="summary">A presentation comparing JavaScript MVC frameworks. It feels like a useful snapshot of a particular era of frontend thinking, back when framework debates could summon three-hour conversations and one dramatic whiteboard diagram.</p>
+          <div class="tags">
+            <span class="tag">javascript</span><span class="tag">mvc</span><span class="tag">presentation</span><span class="tag">frontend</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/js-mvc-presentation" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/js-mvc-presentation" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Identify Tree by Leaf</h3>
+            <span class="category-badge">tool</span>
+          </div>
+          <p class="summary">A guide for identifying trees in Eastern North America based on leaf appearance. It is a nice example of software being useful in a very grounded, real-world way instead of only inside dev tools and game loops.</p>
+          <div class="tags">
+            <span class="tag">nature</span><span class="tag">reference</span><span class="tag">trees</span><span class="tag">education</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/identify-tree-by-leaf" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/identify-tree-by-leaf/" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3 class="project-title">Clockpicker</h3>
+            <span class="category-badge">tool</span>
+          </div>
+          <p class="summary">A clock-style time picker for Bootstrap or jQuery with 12-hour AM/PM support. This is the kind of UI utility that quietly saves people from building the same annoying input widget over and over again.</p>
+          <div class="tags">
+            <span class="tag">jquery</span><span class="tag">bootstrap</span><span class="tag">timepicker</span><span class="tag">ui</span>
+          </div>
+          <div class="project-links">
+            <a class="primary" href="https://github.com/ericop/clockpicker" target="_blank" rel="noreferrer">GitHub repo</a>
+            <a href="https://ericop.github.io/clockpicker" target="_blank" rel="noreferrer">Live / viewable</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer">Simple by design. Control+F can do the heavy lifting.</p>
+  </main>
 </body>
 </html>
